@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 
-[RequireComponent (typeof(PlayerMotor))]
+[RequireComponent(typeof(PlayerMotor))]
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private float speed = 15f;
 
     [SerializeField]
-    private float mouseSensitivityX = 15f;
+    private float mouseSensitivityX = 10f;
 
     [SerializeField]
-    private float mouseSensitivityY = 15f;
+    private float mouseSensitivityY = 10f;
 
     private PlayerMotor motor;
 
@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        // Calculer la vélocité (vitesse) du mouvement du joueur
+        // Calculer la vélocité (vitesse) du mouvement de notre joueur
         float xMov = Input.GetAxisRaw("Horizontal");
         float zMov = Input.GetAxisRaw("Vertical");
 
@@ -32,13 +32,15 @@ public class PlayerController : MonoBehaviour
 
         motor.Move(velocity);
 
-        // Calcule la rotation du joueur en un Vector3
+        // On calcule la rotation du joueur en un Vector3
         float yRot = Input.GetAxisRaw("Mouse X");
-        float xRot = Input.GetAxisRaw("Mouse Y");
 
         Vector3 rotation = new Vector3(0, yRot, 0) * mouseSensitivityX;
 
         motor.Rotate(rotation);
+
+        // On calcule la rotation de la camera en un Vector3
+        float xRot = Input.GetAxisRaw("Mouse Y");
 
         Vector3 cameraRotation = new Vector3(xRot, 0, 0) * mouseSensitivityY;
 
