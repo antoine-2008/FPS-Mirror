@@ -659,10 +659,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: afed4e83-d406-49d1-9e89-b1bf4ffbf8d9
+  cloudProjectId: 
   framebufferDepthMemorylessMode: 0
-  projectName: FPS-Mirror 2024-07-01_17-31-44
-  organizationId: coupedefeux
+  projectName: 
+  organizationId: 
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
