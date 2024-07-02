@@ -2,17 +2,17 @@
 
 [RequireComponent(typeof(PlayerMotor))]
 [RequireComponent(typeof(ConfigurableJoint))]
-[RequireComponent (typeof(Animator))]
+[RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private float speed = 3f;
+    private float speed = 10f;
 
     [SerializeField]
-    private float mouseSensitivityX = 3f;
+    private float mouseSensitivityX = 10f;
 
     [SerializeField]
-    private float mouseSensitivityY = 3f;
+    private float mouseSensitivityY = 10f;
 
     [SerializeField]
     private float thrusterForce = 1000f;
@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 velocity = (moveHorizontal + moveVertical) * speed;
 
-        // Jouer les animations du jetpack
+        // Jouer animation thruster
         animator.SetFloat("ForwardVelocity", zMov);
 
         motor.Move(velocity);
